@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="44px" viewBox="0 0 43 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/第三方/QQ Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40" rx="3"></rect>
+        <filter x="-4.5%" y="-4.5%" width="109.0%" height="109.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.759589101   0 0 0 0 0.787563015   0 0 0 0 0.843510842  0 0 0 0.397248641 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="一席H5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规范/切图画板" transform="translate(-70.000000, -485.000000)">
+            <g id="icon/第三方/QQ/灰" transform="translate(72.000000, 487.000000)">
+                <g id="Group-4-Copy">
+                    <g id="Rectangle-Copy-2" opacity="0.900000036">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <rect stroke-opacity="0.397248641" stroke="#C2C9D7" stroke-width="0.3" fill="#BDBDBD" fill-rule="evenodd" x="-0.15" y="-0.15" width="40.3" height="40.3" rx="3"></rect>
+                    </g>
+                    <g id="qq" transform="translate(11.000000, 10.000000)">
+                        <rect id="Rectangle" fill="#000000" opacity="0" x="0" y="1.15384615" width="18" height="18.4615385"></rect>
+                        <path d="M1.31490116,11.0328485 C0.67144961,12.6692548 0.560510892,14.2134976 1.07082555,14.4900601 C1.42583988,14.6975 2.0027143,14.2365385 2.53522713,13.4067969 C2.73490642,14.32872 3.26741924,15.1354026 3.99961136,15.8038041 C3.22304029,16.1034435 2.71272562,16.6104868 2.71272562,17.1636478 C2.71272562,18.0855709 4.08835192,18.8461539 5.7746483,18.8461538 C7.30559227,18.8461538 8.57029721,18.2469111 8.81435547,17.4402103 L9.16936979,17.4402103 C9.41341069,18.2469111 10.678133,18.8461538 12.209077,18.8461538 C13.9175542,18.8461538 15.2709996,18.1086118 15.2709996,17.1636478 C15.2709996,16.6104868 14.760685,16.1034255 13.9841139,15.8038041 C14.716306,15.1354026 15.2488188,14.32872 15.4485155,13.4067969 C15.9810109,14.2365385 16.5357046,14.697482 16.9128997,14.4900601 C17.4454125,14.2134976 17.3344738,12.646214 16.6688414,11.0328485 C16.1585094,9.76520431 15.4706963,8.82022234 14.9381835,8.61280047 C14.9381835,8.54364182 14.9603816,8.4514423 14.9603816,8.35926081 C14.9603816,7.8752584 14.8272621,7.41429687 14.6053673,7.04551682 L14.6053673,6.95333533 C14.6053673,6.72285456 14.5610057,6.51541466 14.4722478,6.33103366 C14.3391282,3.01210336 12.2978349,0.384615385 8.99187131,0.384615385 C5.68589038,0.384615385 3.64461437,3.01210336 3.5114775,6.33103366 C3.42273693,6.51541466 3.37835796,6.72285458 3.37835796,6.95333533 L3.37835796,7.04551682 C3.15648051,7.41429687 3.02334364,7.87525842 3.02334364,8.35927884 L3.02334364,8.61280047 C2.53522713,8.82022234 1.82521583,9.74214542 1.31490116,11.0328485 Z" id="Path" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

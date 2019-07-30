@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>icon/导航/主导航/我的/高亮</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="18.4425931%" y1="87.0451138%" x2="130.60044%" y2="-26.5144037%" id="linearGradient-1">
+            <stop stop-color="#F7F7F7" offset="0%"></stop>
+            <stop stop-color="#EE2630" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="5.91858373%" y1="79.0387607%" x2="134.556127%" y2="-5.1764105%" id="linearGradient-2">
+            <stop stop-color="#F7F7F7" offset="0%"></stop>
+            <stop stop-color="#DB1B25" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="一席移动设计" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规范/切图画板" transform="translate(-114.000000, -349.000000)">
+            <g id="icon/导航/主导航/我的/高亮" transform="translate(114.000000, 349.000000)">
+                <g id="我的" transform="translate(1.666667, 1.666667)">
+                    <rect id="Rectangle" fill="#000000" opacity="0" x="0" y="0" width="16.6666667" height="16.6666667"></rect>
+                    <path d="M0,8.33333333 C5.63628126e-16,12.9357062 3.73096042,16.6666667 8.33333333,16.6666667 C12.9357062,16.6666667 16.6666667,12.9357062 16.6666667,8.33333333 C16.6666667,3.73096042 12.9357062,2.81814063e-16 8.33333333,0 C3.73096042,-2.81814063e-16 5.63628126e-16,3.73096042 0,8.33333333 Z" id="Path" fill="#CE0900"></path>
+                    <path d="M7.00666667,5.8 C7.00666667,6.53269777 7.60063557,7.12666667 8.33333333,7.12666667 C9.0660311,7.12666667 9.66,6.53269777 9.66,5.8 C9.66,5.06730223 9.0660311,4.47333333 8.33333333,4.47333333 C7.60063557,4.47333333 7.00666667,5.06730223 7.00666667,5.8 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                    <path d="M11.1416667,10.9116667 C11.1416667,12.9116667 9.885,11.805 8.33333333,11.805 C6.78166667,11.805 5.525,12.9133333 5.525,10.9116667 C5.525,8.91 6.78333333,7.28666667 8.33333333,7.28666667 C9.88333333,7.28666667 11.1416667,8.91 11.1416667,10.9116667 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

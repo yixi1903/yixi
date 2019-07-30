@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon/我的/暂停/常规复制 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-40.0%" y="-40.0%" width="185.0%" height="180.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M15.0917969,4.25195312 C15.0917969,4.59820977 15.3733678,4.87890625 15.7207031,4.87890625 C16.0680385,4.87890625 16.3496094,4.59820977 16.3496094,4.25195312 C16.3496094,3.90569648 16.0680385,3.625 15.7207031,3.625 C15.3733678,3.625 15.0917969,3.90569648 15.0917969,4.25195312 Z" id="path-2"></path>
+        <filter x="-556.5%" y="-398.8%" width="1213.0%" height="1216.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#B9B9B9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="一席移动设计" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规范/切图画板" transform="translate(-78.000000, -411.000000)">
+            <g id="icon/全局/播放/纯白" transform="translate(80.000000, 412.000000)">
+                <g id="播放" filter="url(#filter-1)">
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                    <g id="路径">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M3,12.5 C3,15.2614237 5.23857625,17.5 8,17.5 C10.7614237,17.5 13,15.2614237 13,12.5 C13,9.73857625 10.7614237,7.5 8,7.5 C5.23857625,7.5 3,9.73857625 3,12.5 Z" id="Path" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+                    <path d="M12.8566583,9.68970137 L12.8568144,9.68955719 L8.79649543,7.11808399 L8.79522697,7.11918942 C8.71109925,7.04540722 8.59697098,7 8.47118595,7 C8.21244099,7 8.00269736,7.19180011 8.00269736,7.42856284 C8.00269736,7.55859641 7.9966283,7.8131904 8.00269736,7.8076692 L8.00269736,10.000036 L8.00269736,12.3077593 C8.00269736,12.3096698 8.00269736,12.4559966 8.00269736,12.5715753 C8.00269736,12.8081939 8.21244099,13 8.47118595,13 C8.59744583,13 8.71205547,12.9542984 8.79617669,12.8798433 L8.79649543,12.8799935 L12.8568144,10.3085984 L12.8566583,10.3083701 C12.9449296,10.2304605 13,10.121148 13,9.99995794 C13,9.99966356 13,9.99944127 13,9.99907479 C13,9.99878041 13,9.99841994 13,9.99819765 C13,9.87699561 12.9449296,9.76760496 12.8566583,9.68970137 Z" id="路径" fill="#FFFFFF"></path>
+                    <path d="M17.7695312,5.98828125 C17.6640625,5.78320313 17.4511719,5.640625 17.2050781,5.640625 C16.8574219,5.640625 16.5761719,5.921875 16.5761719,6.26757813 C16.5761719,6.38476563 16.609375,6.49609375 16.6660156,6.58984375 L16.6640625,6.59179688 C17.1894531,7.61523438 17.4863281,8.77539063 17.4863281,10.0039063 C17.4863281,14.1367188 14.1347656,17.4882812 10.0019531,17.4882812 C5.86914062,17.4882812 2.515625,14.1367188 2.515625,10.0039063 C2.515625,5.87109375 5.8671875,2.52148438 10,2.52148438 C11.2207031,2.52148438 12.3730469,2.81445313 13.390625,3.33203125 L13.3945312,3.32421875 C13.484375,3.375 13.5898437,3.40429688 13.7011719,3.40429688 C14.0488281,3.40429688 14.3300781,3.12304688 14.3300781,2.77734375 C14.3300781,2.52148438 14.1757813,2.30078125 13.953125,2.203125 C12.765625,1.59960938 11.4238281,1.25976563 10,1.25976563 C5.16992187,1.25976563 1.25585937,5.17578125 1.25585937,10.0039063 C1.25585937,14.8320313 5.16992187,18.7480469 10,18.7480469 C14.8300781,18.7480469 18.7441406,14.8339844 18.7441406,10.0039063 C18.7441406,8.55664063 18.3925781,7.19140625 17.7695312,5.98828125 Z" id="路径" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
