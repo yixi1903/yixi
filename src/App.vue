@@ -9,7 +9,7 @@
         </div>      
       </router-link>
 
-      <router-link to="/member">
+      <router-link to="/scene">
         <div @click="change(2)">
           <img class="footer-img"  src="./assets/images/scene.svg" alt="" v-if="flag!=2">
           <img class="footer-img"  src="./assets/images/scene-change.svg" alt="" v-if="flag==2">
@@ -17,7 +17,7 @@
         </div>  
       </router-link>
 
-      <router-link to="/scene">
+      <router-link to="/member">
         <div @click="change(3)">
           <img class="footer-img"  src="./assets/images/member.svg" alt="" v-if="flag!=3">
           <img class="footer-img"  src="./assets/images/member-change.svg" alt="" v-if="flag==3">
@@ -56,14 +56,17 @@ export default {
 </script>
 
 <style>
-body,ul,p,h1,h2,h3,h4,h5{margin: 0;padding: 0}
+.app{width: 100%;height: 100%}
+body{font-family: "新宋体";}
+body,ul,p,h1,h2,h3,h4,h5{margin: 0;padding: 0;  color: #333}
 .footer-img{height: 18px;width: 18px;margin: 8px 0 2px}
-footer{
-  position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);z-index: 10;justify-content: space-around;align-items: center
-}
+footer{position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);z-index: 10;justify-content: space-around;align-items: center}
 footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
-footer>a{font-size: 10px;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
+footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
 .router-link-exact-active{
   color: red
 }
+/* @font-face{
+  font-family: "zz";
+} */
 </style>

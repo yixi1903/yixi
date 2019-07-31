@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Member from './pages/Member';
 import Scene from './pages/Scene';
 import My from './pages/My';
+import Details from './pages/Details';
 
 const router = new VueRouter({
     routes:[
@@ -14,7 +15,8 @@ const router = new VueRouter({
         {path:"/home",component:Home},
         {path:"/member",component:Member},
         {path:"/scene",component:Scene},
-        {path:"/my",component:My}
+        {path:"/my",component:My},
+        {path:"/details/:id",component:Details}
     ]
 })
 
