@@ -8,6 +8,7 @@ import Member from './pages/Member';
 import Scene from './pages/Scene';
 import My from './pages/My';
 import search from './pages/search'
+import Details from './pages/Details';
 
 const router = new VueRouter({
     routes:[
@@ -16,7 +17,8 @@ const router = new VueRouter({
         {path:"/member",component:Member},
         {path:"/scene",component:Scene},
         {path:"/my",component:My},
-        {path:"/search",component:search}
+        {path:"/search",component:search},
+        {path:"/details/:id",component:Details}
     ]
 })
 
