@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <footer>
+    <footer v-if="footerShow">
       <router-link to="/home">
         <div @click="change(1)">
           <img class="footer-img" src="./assets/images/home.svg" alt="" v-if="flag!=1">
@@ -39,12 +39,15 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex';
 export default {
   data(){
     return {
       flag:1
     }
+  },
+  computed:{
+    ...mapState(["footerShow"])
   },
   methods:{
     change(n){    
@@ -59,7 +62,7 @@ export default {
 body,ul,p,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .footer-img{height: 18px;width: 18px;margin: 8px 0 2px}
 footer{
-  position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);z-index: 10;justify-content: space-around;align-items: center;z-index:20
+  position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);justify-content: space-around;align-items: center;z-index:20
 }
 footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
 footer>a{font-size: 10px;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}

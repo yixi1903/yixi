@@ -4,7 +4,7 @@
     <div class="home">
         <header>
             <h2>全部</h2>
-            <img src="../assets/images/seach.svg"/>
+            <img src="../assets/images/seach.svg" @click="goSearch"/>
         </header>
     </div>
     <div class="homeList">
@@ -37,6 +37,10 @@ export default {
             }else{
                 document.getElementsByTagName("body")[0].style.overflow="auto";
             }
+        },
+        goSearch(){
+            this.$store.state.footerShow=false;
+            this.$router.push("search");
         }
     },
     mounted() {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>icon/header/返回/深黑复制</title>
+    <desc>Created with Sketch.</desc>
+    <g id="一席移动设计" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规范/切图画板" transform="translate(-497.000000, -445.000000)">
+            <g id="icon/header/返回/深黑-白背景" transform="translate(497.000000, 445.000000)">
+                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="20" height="20"></rect>
+                <g id="返回" stroke-width="1">
+                    <rect id="Rectangle" fill="#FFFFFF" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                    <path d="M15.0875,2.18637993 L7.3875,10.0716846 L15.0875,17.9569892 C15.5,18.3870968 15.5,19.2473118 15.0875,19.6774194 C14.675,20.1075269 13.85,20.1075269 13.4375,19.6774194 L5.05,11.0752688 C5.05,11.0752688 4.9125,11.0752688 4.9125,10.9318996 C4.6375,10.7885305 4.5,10.3584229 4.5,10.0716846 C4.5,9.78494624 4.6375,9.35483871 4.9125,9.21146953 C4.9125,9.21146953 5.05,9.21146953 5.05,9.06810036 L13.4375,0.322580645 C13.85,-0.107526882 14.675,-0.107526882 15.0875,0.322580645 C15.6375,0.896057348 15.6375,1.61290323 15.0875,2.18637993 Z" id="Path" fill="#333333"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
