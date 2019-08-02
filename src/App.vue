@@ -52,13 +52,16 @@ export default {
   methods:{
     change(n){    
       this.flag=n
-      console.log(this.show)
     }
+  },
+  created(){
+    document.getElementById('Loading').style.display="none"
   }
 }
 </script>
 
 <style>
+body{background: #fafbfc}
 .app{width: 100%;height: 100%}
 body{font-family: "新宋体";}
 body,ul,p,h1,h2,h3,h4,h5{margin: 0;padding: 0;  color: #333}
@@ -77,4 +80,6 @@ footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;d
 /* @font-face{
   font-family: "zz";
 } */
+.scroll-content{padding-top:.5rem}
+
 </style>

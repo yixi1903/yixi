@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style>    
+<style scoped>    
 .slide{z-index:10;height:12.8rem /* 480/37.5 */!important;border: solid 1px rgb(236, 236, 236); width: 7.2rem /* 270/37.5 */!important;box-shadow: 0 1.5rem 5rem rgba(0,0,0,.1), 0 0 0.8rem rgba(0,0,0,.1);background: #fff;border-radius: .08rem /* 3/37.5 */;box-sizing: border-box;}
 .slide-img{width: 7.2rem /* 270/37.5 */;vertical-align: middle}
 .box{box-sizing: border-box;height: 17.706667rem /* 664/37.5 */;} 

@@ -8,7 +8,18 @@
         </header>
     </div>
     <div class="homeList">
-         <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle"></homeList>
+        <main class="position-box">  <!-- 需要一个创建一个父容器 组件高度默认等于父容器的高度 -->
+            <vue-better-scroll class="wrapper"
+                                ref="scroll"
+                                :scrollbar="scrollbarObj"
+                                :pullDownRefresh="pullDownRefreshObj"
+                                :pullUpLoad="pullUpLoadObj"
+                                :startY="parseInt(startY)"
+                                 @pullingUp="onPullingUp"
+                                 @pullingDown="onPullingDown">
+                 <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle"></homeList>
+             </vue-better-scroll>
+        </main>
     </div>
 </div>
 </template>
@@ -17,16 +28,40 @@
 import axios from 'axios'
 import homeList from '../components/homeList'
 import homeShare from '../components/homeShare'
+import Vue from 'vue'
+import VueBetterScroll from 'vue2-better-scroll'
+Vue.use(VueBetterScroll);
+
 export default {
     data() {
         return {
             dataList:[],
             share:false,
-            shareItem:{}
+            shareItem:{},
+            page:1,
+            scrollbarObj: {
+                 fade: true
+            },
+        // 这个配置用于做下拉刷新功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启下拉刷新，可以配置顶部下拉的距离（threshold） 来决定刷新时机以及回弹停留的距离（stop）
+            pullDownRefreshObj: {
+            threshold: 90,
+            stop: 40
+            },
+            startY: 0, // 纵轴方向初始化位置
+            scrollToX: 0,
+            scrollToY: 0,
+            scrollToTime: 700,
+            pullUpLoadObj:{
+                threshold: 50,
+                txt: {
+                    more: '加载更多',
+                    noMore: '没有更多数据了'
+                }
+            }
         }
     },
     components:{
-        homeList,homeShare
+        homeList,homeShare,VueBetterScroll,
     },
     methods:{
         shareHandle(id){
@@ -41,14 +76,25 @@ export default {
         goSearch(){
             this.$store.state.footerShow=false;
             this.$router.push("search");
-        }
+        },
+        getData(n){
+            axios.get('/api/h5/speeches/?page='+n+'&page_size=10')
+            .then(res=>{
+                document.getElementById('Loading').style.display="block"
+                this.dataList=this.dataList.concat(res.data.data.items);
+                this.$refs.scroll.forceUpdate(true)
+                document.getElementById('Loading').style.display="none"
+            })
+        },
+        onPullingUp() {
+        // 模拟上拉加载
+          this.page++;
+          this.getData(this.page)
+      },
+        onPullingDown(){ this.$refs.scroll.forceUpdate(true)}
     },
     mounted() {
-        axios.get('/api/h5/speeches/?page=1&page_size=10')
-        .then(res=>{
-            this.dataList=res.data.data.items;
-            console.log(res.data.data.items)
-        })
+        this.getData(1);
     },
     
 }
@@ -60,6 +106,14 @@ export default {
     header>h2{font-weight: 550}
     header>img{position: absolute;right:0;width:.43rem;height:.43rem;top:.59rem;margin-top:-0.24rem;}
     .homeList{margin-top:1.6rem;}
+    .position-box {
+        position: fixed;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .scroll-content{padding-top:.5rem}
 </style>
 
 
