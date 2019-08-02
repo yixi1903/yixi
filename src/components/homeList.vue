@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="data">
     <div class="dataList">
         <div class="img">
             <div></div>
@@ -34,7 +34,8 @@ export default {
 }
 </script>
 <style scoped>
-    .dataList{padding: 0 .6rem .5rem .6rem}
+    .data{padding: 0 .6rem .5rem .6rem}
+    .dataList{box-shadow: 0 0 10px rgba(0,0,0,.2);border-radius: 4px;}
     .dataList>div>img{width:100%}
     .content{padding: .5rem .5rem}
     .img{position: relative;}
