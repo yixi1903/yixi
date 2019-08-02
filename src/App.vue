@@ -64,22 +64,25 @@ export default {
 body{background: #fafbfc}
 .app{width: 100%;height: 100%}
 body{font-family: "新宋体";}
-body,ul,p,h1,h2,h3,h4,h5{margin: 0;padding: 0;  color: #333}
+body,ul,p,h1,h2,h3,h4,h5,p{margin: 0;padding: 0;  color: #333}
 .footer-img{height: 18px;width: 18px;margin: 8px 0 2px}
 
+footer{position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);justify-content: space-around;align-items: center;z-index:20}
+footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
+footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
+.router-link-exact-active{color: red}
 
-footer{
-  position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.253333rem /* 47/37.5 */;background: #fff;box-shadow: 0 0 1rem rgba(0,0,0,.1);justify-content: space-around;align-items: center;z-index:20
-}
+
+
+
 
 footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
 footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
 .router-link-exact-active{
   color: red
 }
-/* @font-face{
-  font-family: "zz";
-} */
+
 .scroll-content{padding-top:.5rem}
+
 
 </style>
