@@ -17,8 +17,8 @@
                 
                 
             </swiper-slide>
-            <swiper-slide class="slide">
-                <img src="../assets/images/bj.png" alt="" class="slide-img">
+            <swiper-slide class="slide" >
+                <img src="../assets/images/bj.png" alt="" class="slide-img" @click="more">
                 <div class="more">
                     <img src="../assets/images/more.svg" alt="">
                     <span class="click">点击查看过往现场</span>
@@ -44,7 +44,7 @@ export default {
             swiperOption: {
                 slidesPerView: 1,
                 spaceBetween: 30,
-                centeredSlides : true,
+                centeredSlides : true
             }   
         }
     },
@@ -52,7 +52,8 @@ export default {
         swiper,
         swiperSlide
     },
-    mounted(){
+    mounted(){ 
+        this.$store.state.footerShow=true
         axios.get("/api/h5/activities/?page=1&page_size=3")
         .then(res=>{
             console.log(res.data.data)
@@ -62,14 +63,26 @@ export default {
     methods:{
         click(id){
             this.$router.push("Details/"+id)
+        },
+        more(){
+            console.log(1)
+            this.$router.push("/showMore")
         }
     }
 }
 </script>
 
 <style scoped>    
-
-.slide{position:relative;z-index:10;height:12.8rem /* 480/37.5 */!important;border: solid 1px rgb(236, 236, 236); width: 7.2rem /* 270/37.5 */!important;box-shadow: 0 1.5rem 5rem rgba(0,0,0,.1), 0 0 0.8rem rgba(0,0,0,.1);background: #fff;border-radius: .08rem /* 3/37.5 */;box-sizing: border-box;}
+.slide{position:relative;
+z-index:10;
+height:12.8rem !important;
+border: solid 1px rgb(236, 236, 236);
+width: 7.2rem !important;
+ box-shadow: 0 1.5rem 5rem rgba(0,0,0,.1), 0 0 0.8rem rgba(0,0,0,.1);
+ background: #fff;
+ border-radius: .08rem 3/37.5;
+ box-sizing: border-box;
+ } 
 
 .slide-img{width: 7.2rem /* 270/37.5 */;vertical-align: middle}
 .box{box-sizing: border-box;height: 17.706667rem /* 664/37.5 */;} 
