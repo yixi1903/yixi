@@ -61,8 +61,13 @@ export default {
 </script>
 
 <style>
+
+body{overflow-y: hidden}
+html,body,#app{height:100%}
+#app{overflow-y: scroll}
+
 a{text-decoration: none;}
-body,html,#app{height: 100%}
+
 body{background: #fafbfc}
 .app{width: 100%;height: 100%}
 body{font-family: "新宋体";}
@@ -73,18 +78,4 @@ footer{position: fixed;display: flex;bottom: 0;left:0;width: 100%;height:1.25333
 footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
 footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
 .router-link-exact-active{color: red}
-
-
-
-
-
-footer>a>div{text-align: center;height:1.253333rem /* 47/37.5 */;}
-footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;display: block;width: 25%;height: 100%}
-.router-link-exact-active{
-  color: red
-}
-
-.scroll-content{padding-top:.5rem}
-
-
 </style>
