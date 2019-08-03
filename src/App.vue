@@ -61,6 +61,8 @@ export default {
 </script>
 
 <style>
+a{text-decoration: none;}
+body,html,#app{height: 100%}
 body{background: #fafbfc}
 .app{width: 100%;height: 100%}
 body{font-family: "新宋体";}

@@ -10,17 +10,33 @@ import My from './pages/My';
 import search from './pages/search'
 import Details from './pages/Details';
 import ShowMore from './pages/ShowMore';
+import Course from './pages/Course';
+import Textbook from './pages/Textbook';
 
 const router = new VueRouter({
     routes:[
         {path:"/",redirect:"/home"},
         {path:"/home",component:Home},
-        {path:"/member",component:Member},
+        {path:"/member",component:Member,
+        children:[
+            {
+                name:"course",
+                path:"/member/",
+                component:Course
+            },
+            {
+                path:"/member/textbook",
+                component:Textbook
+            }
+        ]},
         {path:"/scene",component:Scene},
         {path:"/my",component:My},
         {path:"/search",component:search},
         {path:"/details/:id",component:Details},
-        {path:"/showMore",component:ShowMore}
+        {path:"/showMore",component:ShowMore},
+        {path:"/member",redirect:"/course"},
+        // {path:"/course",component:Course},
+        // {path:"/textbook",component:Textbook},
     ]
 })
 
