@@ -61,9 +61,13 @@ export default {
 </script>
 
 <style>
+
 body{overflow-y: hidden}
 html,body,#app{height:100%}
 #app{overflow-y: scroll}
+
+a{text-decoration: none;}
+
 body{background: #fafbfc}
 .app{width: 100%;height: 100%}
 body{font-family: "新宋体";}

@@ -67,9 +67,14 @@ export default {
     },
     methods:{
         returnHome(){
-            this.$store.state.footerShow=true;
-            document.getElementById('Loading').style.display="block"
-            this.$router.push("home")
+            // console.log(this.$route.query)
+            if(this.$route.query.id==100){
+                this.$router.push("showMore")
+            }else{
+                this.$store.state.footerShow=true;
+                document.getElementById('Loading').style.display="block"
+                this.$router.push("home");
+            }
         },
         onFocus(){
             if(this.searchShow)

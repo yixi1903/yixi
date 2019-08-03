@@ -17,8 +17,8 @@
                 
                 
             </swiper-slide>
-            <swiper-slide class="slide">
-                <img src="../assets/images/bj.png" alt="" class="slide-img">
+            <swiper-slide class="slide" >
+                <img src="../assets/images/bj.png" alt="" class="slide-img" @click="more">
                 <div class="more">
                     <img src="../assets/images/more.svg" alt="">
                     <span class="click">点击查看过往现场</span>
@@ -44,7 +44,7 @@ export default {
             swiperOption: {
                 slidesPerView: 1,
                 spaceBetween: 30,
-                centeredSlides : true,
+                centeredSlides : true
             }   
         }
     },
@@ -52,16 +52,21 @@ export default {
         swiper,
         swiperSlide
     },
-    mounted(){
+    mounted(){ 
+        this.$store.state.footerShow=true
         axios.get("/api/h5/activities/?page=1&page_size=3")
         .then(res=>{
-            console.log(res.data.data)
+            // console.log(res.data.data)
             this.cards=res.data.data.items
         })
     },
     methods:{
         click(id){
             this.$router.push("Details/"+id)
+        },
+        more(){
+            // console.log(1)
+            this.$router.push("/showMore")
         }
     }
 }
@@ -69,12 +74,20 @@ export default {
 
 <style scoped>    
 
-.slide{position:relative;z-index:10;height:12.8rem /* 480/37.5 */!important;border: solid 1px rgb(236, 236, 236); width: 7.2rem /* 270/37.5 */!important;box-shadow: 0 1.5rem 5rem rgba(0,0,0,.1), 0 0 0.8rem rgba(0,0,0,.1);background: #fff;border-radius: .08rem /* 3/37.5 */;box-sizing: border-box;}
-
-.slide-img{width: 7.2rem /* 270/37.5 */;vertical-align: middle}
-.box{box-sizing: border-box;height: 17.706667rem /* 664/37.5 */;} 
-.pad{padding:.426667rem /* 16/37.5 */}
+.box{box-sizing: border-box;height: 100%;} 
 .swiper-container{height: 100%;padding-left: 1.44rem /* 54/37.5 */;padding-top: 1.6rem /* 60/37.5 */}
+.slide{position:relative;
+z-index:10;
+width: 7.2rem !important;
+height: 480px;
+box-shadow: 0 1.5rem 5rem rgba(0,0,0,.1), 0 0 0.8rem rgba(0,0,0,.1);
+background: #fff;
+} 
+
+
+.slide-img{width: 100%;vertical-align: middle}
+.pad{padding:.4rem .4rem .2rem}
+
 h2{font-family: "新宋体";height: 1.066667rem /* 40/37.5 */}
 p{margin: .16rem /* 6/37.5 */ 0;font-weight: 300}
 .xian{height: 1px;width: 100%;background-color: rgb(235, 235, 235);margin:16px 0}
