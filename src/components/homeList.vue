@@ -1,6 +1,6 @@
 <template>
 <div class="data">
-    <div class="dataList">
+    <div class="dataList" @click="goSpeechDetails(dataList.id)">
         <div class="img">
             <div></div>
             <img :src='dataList.video_cover' />
@@ -15,7 +15,8 @@
                     <label>{{dataList.created}}</label>
                 </div>
                 <div>
-                    <img src="../assets/images/collect.svg" />
+                    <img src="../assets/images/collect.svg" @click="goLogin(dataList.id)" v-if="true"/>
+                    <img src="../assets/images/collected.svg" @click="goLogin(dataList.id)" v-if="false"/>
                     <img src="../assets/images/share.svg" @click="share(dataList.id)" />
                 </div>
             </div>
@@ -24,12 +25,65 @@
 </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     props:["dataList"],
+    data(){
+        return{
+           flag:0,
+        }
+    },
+    mounted(){
+        // if(localStorage.token){
+        //     axios.get('http://127.0.0.1:4000/getCollect?uid='+localStorage.phone)
+        //     .then(res=>{
+        //         console.log(res)
+        //         console.log(this.dataList)
+        //         for(let i=0;i<res.data.length;i++){
+        //            if(this.dataList.id=res.data[i].col_cid){
+
+        //            }
+        //         }
+        //     })
+        // }
+    },
+    // updated(){
+    //     if(localStorage.token){
+    //         axios.get('http://127.0.0.1:4000/getCollect?uid='+localStorage.phone)
+    //         .then(res=>{console.log(res)})
+    //     }
+    // },
     methods:{
         share(id){
             this.$emit("share",id);
-        }
+        },
+        goLogin(id){
+             let token = localStorage.token;
+             if(!token){
+                 this.$router.push("login");
+             }else{
+                 this.show=!this.show;
+                 if(this.show){
+                     //加入收藏
+                    axios.get('http://127.0.0.1:4000/collect?uid='+localStorage.phone+'&cid='+id)
+                    .then(res=>{console.log(res)})
+                 }else{
+
+                 }
+             }
+        },
+         goSpeechDetails(id){
+            this.$store.state.footerShow=false;
+            this.$router.push('speechDetails/'+id)
+        },
+             
+            // axios.post('http://127.0.0.1:4000/checkUser',{
+            //     headers: { Authorization:token}
+            // }).then(res=>{
+            //     console.log(res);
+            //     this.$store.state.status=false;
+            // })
+         
     }
 }
 </script>

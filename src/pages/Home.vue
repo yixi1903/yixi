@@ -8,7 +8,7 @@
         </header>
     </div>
     <div class="homeList">
-        <main class="position-box">  <!-- 需要一个创建一个父容器 组件高度默认等于父容器的高度 -->
+        <main class="position-box"> 
             <vue-better-scroll class="wrapper"
                                 ref="scroll"
                                 :scrollbar="scrollbarObj"
@@ -17,7 +17,7 @@
                                 :startY="parseInt(startY)"
                                  @pullingUp="onPullingUp"
                                  @pullingDown="onPullingDown">
-                 <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle"></homeList>
+                 <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle" @click="goSpeechDetails(d.id)"></homeList>
              </vue-better-scroll>
         </main>
     </div>
@@ -77,6 +77,11 @@ export default {
             this.$store.state.footerShow=false;
             this.$router.push("search");
         },
+        goSpeechDetails(id){
+            console.log(id)
+            this.$router.push('speechDetails'+id)
+        },
+        //获取数据
         getData(n){
             axios.get('/api/h5/speeches/?page='+n+'&page_size=10')
             .then(res=>{
@@ -105,7 +110,7 @@ export default {
     header{display: flex;position: relative;line-height:1.17rem;justify-content: center;}
     header>h2{font-weight: 550}
     header>img{position: absolute;right:0;width:.43rem;height:.43rem;top:.59rem;margin-top:-0.24rem;}
-    .homeList{margin-top:1.6rem;}
+    main{top:48px !important;}
     .position-box {
         position: fixed;
         top: 40px;
@@ -113,7 +118,6 @@ export default {
         right: 0;
         bottom: 0;
     }
-    .scroll-content{padding-top:.5rem}
 </style>
 
 

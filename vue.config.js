@@ -3,8 +3,7 @@ module.exports={
         proxy:{
             '/api':{
                 target:'https://www.yixi.tv'
-            }
-           
+            },
         }
     }
 }
