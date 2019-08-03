@@ -15,17 +15,21 @@
         </div>
         <div class="fen"></div>
         <div class="secend">
-            <div>
+            <div class="dan">
                 <img class="pic" src="../assets/images/scene-change.svg" alt="" >
                 <span>单场讲者介绍</span>
             </div>
             
-            <img :src="txt[0].cover_url" alt="">
-            <h4>{{txt[0].speaker_name}}-{{txt[0].speaker_intro}}</h4>
-           
-            <img src="../assets/images/yin.svg" alt="" class="pic yin">
-            <p class="span" v-html="txt[0].quotations"></p> 
-            <p class="p" v-html="txt[0].describe"></p>
+            <div v-for="t in txt">
+                <img v-if="show1" :src="t.speech_cover || t.cover_url" alt="" class="pic1">
+                <h4>{{t.speaker_name}} - {{t.speaker_intro}}</h4>
+            
+                <img src="../assets/images/yin.svg" alt="" class="pic yin">
+                <p class="span" v-html="t.quotations || t.titlelanguage"></p> 
+                <p class="p" v-html="t.describe" v-if="show"></p>
+                <div class="xian"></div>
+                
+            </div>
             
             
         </div>
@@ -34,28 +38,35 @@
 
 <script>
 import axios from 'axios';
-// import Title from './Title'
 export default {
     data(){
         return {
             tit:[],
             txt:[],
+            show:true,
+            show1:true
         }
     },
-    // components:{Title},
     mounted(){
-        console.log(this.$route.params)
         let id=this.$route.params.id
         axios.get("/api/h5/activity/"+id)
         .then(res=>{
-            console.log(res.data.data)
             this.tit=res.data.data.activity
             this.txt=res.data.data.item_one
+            console.log(res.data.data.item_one)
         })
+        if(id==100){
+            this.show=false
+        };
+        if(id==99){
+            this.show1=false
+        };
+
+
     },
     methods:{
         return1(){
-            
+            this.$router.push("/scene")
         }
     }
 }
@@ -73,14 +84,15 @@ p{margin: .213333rem /* 8/37.5 */ 0;color: #333}
 .xian{height: 1px;width: 100%;background-color: rgb(235, 235, 235);margin:16px 0}
 .inde{text-indent: .96rem /* 36/37.5 */;font-size: .266667rem /* 10/37.5 */}
 .fen{height: .266667rem /* 10/37.5 */;background: rgb(245, 247, 248)}
-.secend{padding: 0 .6rem .6rem;margin-bottom:1.226667rem /* 46/37.5 */ }
-.secend>div{line-height: 1.6rem /* 60/37.5 */}
+.secend{padding: 0 .6rem .6rem;margin-bottom:1.226667rem /* 46/37.5 */ ;background: #fff}
+.secend>.dan{line-height: 1.6rem }
 .secend>div>span{margin-left: .266667rem /* 10/37.5 */}
 .pic{width: 18px;}
-.yin{position: relative;top: 20px}
+.yin{position: relative;top: 16px}
 .span{margin:0 0 0 30px;line-height: 20px;}
-h4{font-size: 15px;margin-top: 20px}
+h4{font-size: 15px;line-height: 40px}
 .p{line-height: 16px;font-size: 13px}
+.pic1{margin-bottom: 20px}
 
 
 

@@ -9,6 +9,7 @@ import Scene from './pages/Scene';
 import My from './pages/My';
 import search from './pages/search'
 import Details from './pages/Details';
+import ShowMore from './pages/ShowMore';
 
 const router = new VueRouter({
     routes:[
@@ -18,7 +19,8 @@ const router = new VueRouter({
         {path:"/scene",component:Scene},
         {path:"/my",component:My},
         {path:"/search",component:search},
-        {path:"/details/:id",component:Details}
+        {path:"/details/:id",component:Details},
+        {path:"/showMore",component:ShowMore}
     ]
 })
 
