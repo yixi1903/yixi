@@ -48,9 +48,9 @@
             </div>
         </div>
         <div class="foot">
-            <div>
+            <div class="foot-edit" @click="review">
                 <img src="../assets/images/edit.svg" />
-                <span>分享你的看法</span>
+                <input placeholder="分享你的看法" name="shareTxt"/>
             </div>
             <div>
                 <img src="../assets/images/review.svg" />
@@ -93,6 +93,7 @@ export default {
     },
     methods:{
         goSpeechDetails(id){
+            this.$store.state.id=id;
             this.$router.push('/speechDetails/'+id);
             this.$router.go(0)
         },
@@ -101,19 +102,30 @@ export default {
             document.getElementsByClassName("video")[0].getElementsByTagName("video")[0].play();
         },
         show(){
-            // document.getElementsByClassName("article")[0].classList.remove("active");
             $(".article").slideDown(1000);  
         },
         exit(){
-            // document.getElementsByClassName("article")[0].classList.add("active")
-             $(".article").slideUp();           
-
+             $(".article").slideUp(1000);           
+        },
+        review(){
+             let token = localStorage.token;
+             axios.post('http://127.0.0.1:8000/checkUser',  {headers:{ Authorization:token}})
+            .then(res=>{
+                console.log(res.data);
+                if(res.data.status==10010){
+                    this.$store.state.flag=1;
+                    this.$store.state.id=this.$route.params.id;
+                    this.$router.push("/login");
+                }else if(res.data.status==10000){
+                    this.show=!this.show;
+                }
+            })
         }
     }
 }
 </script>
 <style scoped>
-    .video{position: fixed;background: #fff;z-index:1}
+    .video{position: fixed;background: #fff;z-index:1;width:100%;}
     .video>img:nth-of-type(1){position: absolute;width:100%;height:100%;top:0;left:0;}
     .video>img:nth-of-type(2){position: absolute;top:50%;left:50%;margin-top:-25px;margin-left:-25px;width:50px;height:50px;}
     .content{padding:6.2rem .5rem .5rem 1.5rem}
@@ -143,17 +155,19 @@ export default {
     .foot img{width:16px;height:16px;}
     .foot>div{display: flex;align-items: center}
     .foot>div:nth-of-type(2)>img{margin-left:.5rem}
-    .foot>div:nth-of-type(1)>span{margin-left:.4rem;color:#777;}
+    .foot>div:nth-of-type(1)>input{margin-left:.4rem;color:#777;background:#f7f7f7;outline: none;border:none}
+    .foot-edit{border-radius:.5rem;background: #f7f7f7;padding: .2rem}
 
-    .article{position: fixed;z-index:2;top:6.2rem;background: #fff;width:100%;padding: 0 .8rem;
+    .article{position: fixed;z-index:2;top:6rem;background: #fff;width:100%;padding: 0 .8rem;
     box-sizing: border-box;display: none;height:100%;overflow-y: scroll}
     .exit-img{position: fixed;z-index:3;bottom:1rem;left:50%;width:26px;height:26px;margin-left:-13px;
-    background: #fff;}
+    background: #fff;border-radius: 50%}
     .exit-img>img{width:100%;height:100%;}
     .art-title{padding-bottom: .5rem;border-bottom: 1px dashed #dee3e9;margin-bottom: .7rem}
     .art-title>h3{font-size: 22px;margin-bottom:.3rem;}
     .art-title>span{color:#666;}
     .art-content>p{color:#555 ;}
+    .art-content>p>img{width:100%}
 
     .active{height: 0;overflow: hidden;}
 </style>

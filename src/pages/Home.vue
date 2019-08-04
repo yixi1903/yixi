@@ -17,7 +17,7 @@
                                 :startY="parseInt(startY)"
                                  @pullingUp="onPullingUp"
                                  @pullingDown="onPullingDown">
-                 <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle" @click="goSpeechDetails(d.id)"></homeList>
+                 <homeList :dataList="d" v-for="d in dataList" :key="d.id" @share="shareHandle" ></homeList>
              </vue-better-scroll>
         </main>
     </div>
@@ -77,10 +77,7 @@ export default {
             this.$store.state.footerShow=false;
             this.$router.push("search");
         },
-        goSpeechDetails(id){
-            console.log(id)
-            this.$router.push('speechDetails'+id)
-        },
+       
         //获取数据
         getData(n){
             axios.get('/api/h5/speeches/?page='+n+'&page_size=10')
@@ -99,7 +96,9 @@ export default {
         onPullingDown(){ this.$refs.scroll.forceUpdate(true)}
     },
     mounted() {
+        this.$store.state.footerFlag=1;
         this.getData(1);
+        this.$store.state.footerShow=true;
     },
     
 }

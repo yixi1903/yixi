@@ -14,7 +14,9 @@
 import Content from './Content'
 export default {
     components:{Content},
-    
+    mounted(){
+        this.$store.state.footerFlag=3;
+    }
 }
 </script>
 
