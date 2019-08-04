@@ -16,6 +16,7 @@ import speechDetails from './pages/speechDetails';
 import ShowMore from './pages/ShowMore';
 import Course from './pages/Course';
 import Textbook from './pages/Textbook';
+import personalMessage from './pages/personalMessage';
 
 
 const router = new VueRouter({
@@ -44,7 +45,7 @@ const router = new VueRouter({
 
         {path:"/showMore",component:ShowMore},
         {path:"/member",redirect:"/course"},
-   
+        {path:"/personalMessage/:id",component:personalMessage},
 
     ]
 })

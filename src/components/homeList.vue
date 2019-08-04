@@ -15,8 +15,8 @@
                     <label>{{dataList.created}}</label>
                 </div>
                 <div>
-                    <img src="../assets/images/collect.svg" @click="goLogin(dataList.id)" v-if="true"/>
-                    <img src="../assets/images/collected.svg" @click="goLogin(dataList.id)" v-if="false"/>
+                    <img src="../assets/images/collect.svg" @click="goLogin(dataList.id)" v-if="show" />
+                    <img src="../assets/images/collected.svg" @click="goLogin(dataList.id)" v-if="!show" />
                     <img src="../assets/images/share.svg" @click="share(dataList.id)" />
                 </div>
             </div>
@@ -30,7 +30,7 @@ export default {
     props:["dataList"],
     data(){
         return{
-           flag:0,
+           show:true
         }
     },
     mounted(){
@@ -55,22 +55,26 @@ export default {
     // },
     methods:{
         share(id){
+            event.stopPropagation();
             this.$emit("share",id);
         },
         goLogin(id){
+             event.stopPropagation();
              let token = localStorage.token;
-             if(!token){
-                 this.$router.push("login");
-             }else{
-                 this.show=!this.show;
-                 if(this.show){
+            axios.post('http://127.0.0.1:8000/checkUser',  {token:token})
+            .then(res=>{
+                console.log(res.data);
+                if(res.data.status==10010){
+                    this.$store.state.flag=0;
+                    this.$router.push("login");
+                }else if(res.data.status==10000){
+                    this.show=!this.show;
+                }
+            })
+         
                      //加入收藏
-                    axios.get('http://127.0.0.1:4000/collect?uid='+localStorage.phone+'&cid='+id)
-                    .then(res=>{console.log(res)})
-                 }else{
-
-                 }
-             }
+                    // axios.get('http://127.0.0.1:8000/collect?uid='+localStorage.phone+'&cid='+id)
+                    // .then(res=>{console.log(res)}  
         },
          goSpeechDetails(id){
             this.$store.state.footerShow=false;

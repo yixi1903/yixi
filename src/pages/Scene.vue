@@ -52,7 +52,9 @@ export default {
         swiper,
         swiperSlide
     },
-    mounted(){ 
+    mounted(){
+        this.$store.state.footerFlag=2;        
+        
         this.$store.state.footerShow=true
         axios.get("/api/h5/activities/?page=1&page_size=3")
         .then(res=>{

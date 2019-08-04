@@ -41,16 +41,23 @@ export default {
     },
     methods:{
         returnHome(){
-            this.$store.state.footerShow=true;
-            this.$router.push("Home");
+            if(this.$store.state.flag==1){
+                this.$router.push("/speechDetails/"+this.$store.state.id);
+            }else if(this.$store.state.flag==2){
+                this.$router.push("/My");                
+            }
+            else if(this.$store.state.flag==0){
+                this.$store.state.footerShow=true;
+                this.$router.push("Home");
+            }
         },
         login(){
-            axios.post('http://127.0.0.1:4000/login',{phone:this.phone})
+            axios.post('http://127.0.0.1:8000/login',{phone:this.phone})
             .then(res=>{
                 localStorage.token = res.data.token;
                 localStorage.phone = res.data.phone;
-                // console.log(localStorage)
-                this.$router.push("Home")
+                this.$router.push("Home");
+                console.log(res.data)
                 // console.log(localStorage.token);
             })
         }
@@ -62,8 +69,8 @@ export default {
 </script>
 <style scoped>
     .login{background: url('../assets/images/bj.png') no-repeat;height:100%}
-    header{height:1.17rem;padding: 0 .5rem;display: flex;justify-content: center;position: relative;align-items: center;font-size: 17px;background:#fff;box-shadow: 0 0 4px rgba(0,0,0,.1);}
-    header>img{position: absolute;width:16px;height:16px;top:50%;margin-top:-8px;left:.5rem;}
+    header{padding: 0 0.5rem;height:1.17rem;display: flex;justify-content: center;position: relative;align-items: center;font-size: 17px;background:#fff;box-shadow: 0 0 4px rgba(0,0,0,.1);}
+    header>img{position: absolute;width:16px;height:16px;top:50%;left:.5rem;margin-top:-8px;}
     .login-content{width:86%;margin:0 auto;margin-top:1.27rem}
     .login-content>div:nth-of-type(1){text-align:center;padding: 1.1rem .5rem;box-shadow: 0 4px 4px rgba(0,0,0,.1), 0 0 4px rgba(0,0,0,.1);background: rgba(250,251,252,.8);}
     .login-content>div:nth-of-type(1)>img{width: 40px;height:40px;}
