@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="46px" viewBox="0 0 61 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>icon/全局/空状态/低透明</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#B9B9B9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="一席移动设计" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012">
+        <g id="规范/切图画板" transform="translate(-180.000000, -484.000000)">
+            <g id="icon/全局/空状态/低透明" transform="translate(181.000000, 485.000000)">
+                <g id="Cloudresearch">
+                    <path d="M22.764904,38.6247406 C21.4233791,40.65822 19.1183843,42 16.5,42 C12.3578644,42 9,38.6421356 9,34.5 C9,34.2420675 9.01302047,33.9871761 9.03843998,33.7359473 C3.86999012,32.6088697 0,28.0063772 0,22.5 C0,16.8396553 4.08943867,12.1344502 9.47498487,11.1777159 C11.1088113,4.74482238 16.7687695,0 23.5,0 C28.9276675,0 33.6588089,3.08501665 36.1442753,7.65248208 C37.6691014,6.60981959 39.5133352,6 41.5,6 C46.5472154,6 50.6751271,9.93600698 50.9817327,14.9060184 C55.1063742,16.6530963 58,20.7386269 58,25.5 C58,31.8512746 52.8512746,37 46.5,37 C45.37869,37 44.2948628,36.8395169 43.2702341,36.5402662 C41.6345889,40.8984129 37.4295017,44 32.5,44 C28.3999715,44 24.8010781,41.8543855 22.764904,38.6247406 Z" id="Oval-64" stroke="#535353" stroke-width="2" fill="#FFFFFF" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M15,21 L23,21" id="Line" stroke="#535353" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M22,30 L35,30" id="Line" stroke="#535353" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <circle id="Oval-76-Copy" stroke="#979797" fill="url(#linearGradient-1)" fill-rule="nonzero" cx="37" cy="20" r="7"></circle>
+                    <circle id="Oval-78" stroke="#535353" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" cx="39" cy="22" r="1"></circle>
+                    <circle id="Oval-78" stroke="#535353" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" cx="22" cy="22" r="1"></circle>
+                    <path d="M42,26 C42,26 45,34 57,30.5" id="Path-310" stroke="#535353" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="2,4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
