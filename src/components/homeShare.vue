@@ -40,16 +40,17 @@ export default {
         }
     },
     mounted(){
-        console.log(this.shareItem)
         axios.get("/api/h5/create/qrcode/?url=https:%2F%2Fwww.yixi.tv%2Fwx%2Fh5%2F%23%2Fspeech%2Fspeech%2F"+this.shareItem.id)
         .then(res=>{
             this.qrCode=res.data.data
+            console.log(res.data.data)
+
         })
     }
 }
 </script>
 <style scoped>
-    .share{position: fixed;z-index: 10;top:0;left:0;width:100%;}
+    .share{position: fixed;z-index: 100;top:0;left:0;width:100%;}
     .shareTop{height:1.17rem;background: #fff;display: flex;justify-content: space-around;width:100%;align-items: center;color:#333;}
     .shareSection{width:100%;height:1000px;background:rgba(0,0,0,.6);overflow: hidden;}
     .shareTop>span{vertical-align: middle}

@@ -7,7 +7,11 @@
         <div class="search_div">
             <div class="search" @click="onFocus">
                 <img src="../assets/images/search1.svg" v-if="searchShow"/>
+<<<<<<< HEAD
+                <img src="../assets/images/search2.svg" v-if="!searchShow" @click="search"/>
+=======
                 <img src="../assets/images/search2.svg" v-if="!searchShow"/>
+>>>>>>> 8f45796fe5771cca87eede73c36904ca4410e5fa
                 <input placeholder="发现世界的另一面" @keyup.enter="search" v-model="searchText"/>
                 <img src="../assets/images/shareExit.svg" class="img-delete" v-if="!searchShow" @click="onBlur($event)" id="imgDelete"/>
             </div>

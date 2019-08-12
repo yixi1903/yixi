@@ -9,35 +9,43 @@
             <span>{{loginMessage}}</span>
         </div>
 
-        <div class="items">
-            <div>
+
+        <div class="items" @click="goOrder">
+            <div >
                 <img src="../assets/images/order.svg" />
                 <span>订单</span>
             </div>
             <img src="../assets/images/right.svg" />
         </div>
-        <div class="items">
+
+        <div class="items" @click="goCollect">
             <div>
                 <img src="../assets/images/collect.svg" />
                 <span>收藏</span>
             </div>
             <img src="../assets/images/right.svg" />
         </div>
-        <div class="items">
+
+        <div class="items" @click="goDiscuss">
+
             <div>
                 <img src="../assets/images/review.svg" />
                 <span>评论</span>
             </div>
             <img src="../assets/images/right.svg" />
         </div>
-        <div class="items">
+
+        <div class="items" @click="goTickling">
+
             <div>
                 <img src="../assets/images/suggest.svg" />
                 <span>反馈建议</span>
             </div>
             <img src="../assets/images/right.svg" />
         </div>
-        <div class="items">
+
+        <div class="items" @click="goAboutUs">
+
             <div>
                 <img src="../assets/images/aboutyixi.svg" />
                 <span>关于一席</span>
@@ -58,7 +66,7 @@ export default {
     methods:{
         goLogin(){
             let token = localStorage.token;
-             axios.post('http://127.0.0.1:8000/checkUser', {token:token})
+             axios.post('http://101.37.76.177:8000/checkUser', {token:token})
             .then(res=>{
                 console.log(res.data);
                 if(res.data.status==10010){
@@ -68,6 +76,22 @@ export default {
                     this.$router.push("personalMessage/"+localStorage.phone);                    
                 }
             })
+        },
+
+        goOrder(){
+            this.$router.push("order")
+        },
+        goCollect(){
+            this.$router.push("collect")
+        },
+        goDiscuss(){
+            this.$router.push("discuss")
+        },
+        goTickling(){
+             this.$router.push("tickling")
+        },
+        goAboutUs(){
+             this.$router.push("aboutUs")
         }
     },
     mounted(){
@@ -76,20 +100,28 @@ export default {
 
         let token = localStorage.token;
         console.log(localStorage)
-        axios.post('http://127.0.0.1:8000/checkUser', {token:token})
+        axios.post('http://101.37.76.177:8000/checkUser', {token:token})
         .then(res=>{
             console.log(res.data);
             if(res.data.status==10010){
-                console.log(1)
                this.loginMessage="未登录";              
             }else if(res.data.status==10000){
-                console.log(2)
-                let phone=localStorage.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
-               this.loginMessage=phone;
-            }
-        })
-    }
+            axios.post('http://101.37.76.177:8000/checkUser', {token:token})
+            .then(res=>{
+                console.log(res.data);
+                if(res.data.status==10010){
+                    console.log(1)
+                this.loginMessage="未登录";              
+                }else if(res.data.status==10000){
+                    console.log(2)
+                    let phone=localStorage.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+                this.loginMessage=phone;
+                }
+            })
+        }
+    })
 }
+}   
 </script>
 <style scoped>
     header{display:flex;justify-content: center;position: relative;height:1.17rem;align-items: center;font-size: 18px;background:#fff;}

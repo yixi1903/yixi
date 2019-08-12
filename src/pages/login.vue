@@ -10,7 +10,7 @@
                 <h2>登录·注册</h2>
                 <div class="login-input">
                     <div>
-                        <input name="user_name" placeholder="请输入手机号" v-model="phone"/><span :class="{active:/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(phone)}">获取验证码</span>
+                        <input name="user_name" placeholder="请输入手机号" v-model="phone"/><span @click="getCode" :class="{active:/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(phone),redActive:countDown!='获取验证码'}">{{countDown}}</span>
                     </div>
                     <div>
                         <input name="code" placeholder="请输入验证码" v-model="code"/><span :class="{active:code}" @click="login">登录</span>
@@ -32,13 +32,16 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
     data() {
         return {
             phone:"",
             code:"",
+            countDown:"获取验证码"
         }
     },
+
     methods:{
         returnHome(){
             if(this.$store.state.flag==1){
@@ -52,7 +55,32 @@ export default {
             }
         },
         login(){
-            axios.post('http://127.0.0.1:8000/login',{phone:this.phone})
+            if(/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(this.phone)){
+                let nickname=this.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');                
+                axios.post('http://101.37.76.177:8000/login',{phone:this.phone,user_nickname:nickname})
+               .then(res=>{
+                    localStorage.token = res.data.token;
+                    localStorage.phone = res.data.phone;
+                    this.$router.push("Home");
+                    console.log(res.data)
+                })
+            }    
+        },
+
+        //获取验证码
+        getCode(){
+            if(/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(this.phone)){
+                let count=5;
+                let timer=setInterval(()=>{
+                    if(count>0){
+                        this.countDown=count+"秒后再次获取";
+                        count--;
+                    }else{
+                        this.countDown="获取验证码";
+                        clearInterval(timer)
+                    }
+                },1000)
+            axios.post('http://101.37.76.177:8000/login',{phone:this.phone})
             .then(res=>{
                 localStorage.token = res.data.token;
                 localStorage.phone = res.data.phone;
@@ -60,6 +88,7 @@ export default {
                 console.log(res.data)
                 // console.log(localStorage.token);
             })
+            }
         }
     },
     mounted(){
@@ -83,6 +112,8 @@ export default {
     .login-input>div>input{border: none;height:.93rem;width:60%;outline-width: 0.5px;background: rgba(250,251,252,.8);}
     .login-input>div>span{color:#bdbdbd;font-size: 10px;}
     .active{color:#333 !important;}
+
+    .redActive{color:#ce0900 !important;}
 
     .line{padding:0 .5rem;margin-top:.8rem;display: flex;justify-content: space-around;align-items: center}
     .line>span{display: inline-block;width:2rem;height:1px;background:#bdbdbd;}

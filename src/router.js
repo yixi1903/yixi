@@ -18,6 +18,14 @@ import Course from './pages/Course';
 import Textbook from './pages/Textbook';
 import personalMessage from './pages/personalMessage';
 
+<<<<<<< HEAD
+import order from './pages/order'
+import collect from './pages/collect'
+import discuss from './pages/discuss'
+import tickling from './pages/tickling'
+import aboutUs from './pages/aboutUs'
+=======
+>>>>>>> 8f45796fe5771cca87eede73c36904ca4410e5fa
 
 const router = new VueRouter({
     routes:[
@@ -47,6 +55,14 @@ const router = new VueRouter({
         {path:"/member",redirect:"/course"},
         {path:"/personalMessage/:id",component:personalMessage},
 
+<<<<<<< HEAD
+        {path:'/order',component:order},
+        {path:'/collect',component:collect},
+        {path:'/discuss',component:discuss},
+        {path:'/tickling',component:tickling},
+        {path:'/aboutUs',component:aboutUs},
+=======
+>>>>>>> 8f45796fe5771cca87eede73c36904ca4410e5fa
     ]
 })
 

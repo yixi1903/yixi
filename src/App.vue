@@ -49,9 +49,12 @@ export default {
       this.$store.state.footerFlag=n;
     }
   },
-  created(){
+ mounted() {
     document.getElementById('Loading').style.display="none"
-  },
+ },
+
+   
+
 }
 </script>
 
@@ -75,5 +78,10 @@ footer>a{font-size: .266667rem /* 10/37.5 */;text-decoration: none;color: #333;d
 .router-link-exact-active{color: red}
 
 .art-content>p{color:#999 ;font-size: .3rem}
-.art-content>p>img{width:100% !important}
+
+.art-content>p>img{width:100% !important; height: auto !important;}
+
+.distpicker-address-wrapper>.address-header{width:100%;position: fixed;bottom:3rem;left:0;}
+
+
 </style>

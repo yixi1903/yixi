@@ -15,8 +15,10 @@
                     <label>{{dataList.created}}</label>
                 </div>
                 <div>
-                    <img src="../assets/images/collect.svg" @click="goLogin(dataList.id)" v-if="show" />
-                    <img src="../assets/images/collected.svg" @click="goLogin(dataList.id)" v-if="!show" />
+
+                    <img src="../assets/images/collect.svg" @click="goLogin()" v-if="show" />
+                    <img src="../assets/images/collected.svg" @click="goLogin()" v-if="!show" />
+
                     <img src="../assets/images/share.svg" @click="share(dataList.id)" />
                 </div>
             </div>
@@ -58,10 +60,22 @@ export default {
             event.stopPropagation();
             this.$emit("share",id);
         },
+
+        goLogin(){
+             event.stopPropagation();
+             let token = localStorage.token;
+             axios.post('http://101.37.76.177:8000/checkUser',  {token:token})
+            .then(res=>{
+                console.log(res.data);
+                if(res.data.status==10010){
+                      this.$store.state.flag=0;
+                }
+            })
+        }
         goLogin(id){
              event.stopPropagation();
              let token = localStorage.token;
-            axios.post('http://127.0.0.1:8000/checkUser',  {token:token})
+            axios.post('http://101.37.76.177:8000/checkUser',  {token:token})
             .then(res=>{
                 console.log(res.data);
                 if(res.data.status==10010){
@@ -87,8 +101,8 @@ export default {
             //     console.log(res);
             //     this.$store.state.status=false;
             // })
-         
-    }
+    } 
+    
 }
 </script>
 <style scoped>

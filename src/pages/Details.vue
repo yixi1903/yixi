@@ -20,6 +20,16 @@
                 <span>单场讲者介绍</span>
             </div>
             
+<<<<<<< HEAD
+            <div v-for="t in txt" :key="t.id">
+                <img v-if="show1" :src="t.speech_cover || t.cover_url"  class="pic1" />
+                <h4>{{t.speaker_name}} - {{t.speaker_intro}}</h4>
+            
+                <img src="../assets/images/yin.svg"  class="pic yin">
+                <p class="span" v-html="t.quotations || t.titlelanguage"></p> 
+                <p class="p" v-html="t.describe" v-if="show"></p>
+                <div class="xian"></div>
+=======
             <div v-for="t in txt">
                 <img v-if="show1" :src="t.speech_cover || t.cover_url" alt="" class="pic1">
                 <h4>{{t.speaker_name}} - {{t.speaker_intro}}</h4>
@@ -29,6 +39,7 @@
                 <p class="p" v-html="t.describe" v-if="show"></p>
                 <div class="xian"></div>
                 
+>>>>>>> 8f45796fe5771cca87eede73c36904ca4410e5fa
             </div>
             
             
