@@ -1,4 +1,5 @@
 <template>
+
     <div class="personal-message">
         <header>
             <img src="../assets/images/return.svg" @click="returnPerson"/>
@@ -67,10 +68,14 @@
         </div>
         <!-- 遮罩 -->
         <div class="mask" v-if="show" @click="slideUp"></div>
+    <div>
+        个人信息
+        <h3 @click="loginOut">退出登录</h3>
     </div>
 </template>
 <script>
 import axios from 'axios'
+
 import VDistpicker from 'v-distpicker'//地址选择插件
 
 export default {
@@ -167,9 +172,7 @@ export default {
     /* 日期选择样式 */
     .personal-message>div>.address-picker{background:#fff;z-index: 2;position: fixed;left:0;bottom:0;width:100%;height:3rem;overflow-y: scroll;padding:0 .5rem;}
     .origin>span{margin-left:.7rem}
-
     .mask{position: fixed;width:100%;height:100%;z-index:1;left:0;top:0;background: rgba(0,0,0,.7) !important;display: none;}
-
 </style>
 
 

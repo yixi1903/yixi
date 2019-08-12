@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <homeShare v-if="share" :shareItem="shareItem" @share="shareHandle"></homeShare>
 
         <div class="video">
@@ -56,6 +55,7 @@
                 <input placeholder="分享你的看法" name="shareTxt"/>
             </div>
             <div>
+
                 <div @click="showReview">
                     <img src="../assets/images/review.svg" v-if="reviewIcon"/>
                     <img src="../assets/images/cancelReview.svg" v-if="!reviewIcon"/>
@@ -135,9 +135,9 @@ export default {
             }
         }
     },
+   
     mounted(){
-        this.$store.state.footerShow=false;
-        document.getElementById('Loading').style.display="block"
+        this.$store.state.footerShow=false
         axios.get('/api/h5/speech/'+this.$route.params.id)
         .then(res=>{
             this.speechData=res.data.data;
@@ -154,7 +154,7 @@ export default {
                     this.reviewData=this.reviewData.concat(res.data.data.items);
                     this.$refs.scroll.forceUpdate(true);
                 })
-         },
+            },
         goSpeechDetails(id){
             this.$store.state.id=id;
             this.$router.push('/speechDetails/'+id);
@@ -271,7 +271,9 @@ export default {
     .div-middle>p:nth-of-type(2){margin-top:.4rem;color:#999;}
     .div-right{position: absolute;right:0;top:50%;margin-top:-8px}
 
+
     .foot{position: fixed;bottom:0;left:0;width:100%;height:1.17rem;background:#fff;box-sizing: border-box;z-index:3;
+
     display: flex;justify-content: space-between;padding: 0 .5rem 0 .8rem;align-items: center;box-shadow: 0 0 3px rgba(0,0,0,.2)}
     .foot img{width:16px;height:16px;}
     .foot>div{display: flex;align-items: center}
@@ -281,7 +283,10 @@ export default {
     .foot>div>div{position: relative}
     .foot>div>div>span{position: absolute;top:-.2rem;right:-.2rem;background:#ce0900;padding: 0 .1rem;color:#fff;font-size: 10px;line-height: 10px}
 
-    .article{position: fixed;z-index:4;top:6rem;background: #fff;width:100%;padding: 0 .8rem;
+   
+
+    .article{position: fixed;z-index:2;top:6rem;background: #fff;width:100%;padding: 0 .8rem;
+
     box-sizing: border-box;display: none;height:100%;overflow-y: scroll}
     .exit-img{position: fixed;z-index:3;bottom:1rem;left:50%;width:26px;height:26px;margin-left:-13px;
     background: #fff;border-radius: 50%}
@@ -290,6 +295,7 @@ export default {
     .art-title>h3{font-size: 22px;margin-bottom:.3rem;}
     .art-title>span{color:#666;}
     .art-content>p{color:#555 ;}
+
 
     .active{height: 0;overflow: hidden;}
 
@@ -303,6 +309,10 @@ export default {
         right: 0;
         bottom: 0;
     }
+
+    .art-content>p>img{width:100%}
+
+    .active{height: 0;overflow: hidden;}
 </style>
 
 

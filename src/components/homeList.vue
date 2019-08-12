@@ -15,8 +15,10 @@
                     <label>{{dataList.created}}</label>
                 </div>
                 <div>
+
                     <img src="../assets/images/collect.svg" @click="goLogin()" v-if="show" />
                     <img src="../assets/images/collected.svg" @click="goLogin()" v-if="!show" />
+
                     <img src="../assets/images/share.svg" @click="share(dataList.id)" />
                 </div>
             </div>
@@ -58,6 +60,7 @@ export default {
             event.stopPropagation();
             this.$emit("share",id);
         },
+
         goLogin(){
              event.stopPropagation();
              let token = localStorage.token;
@@ -66,6 +69,17 @@ export default {
                 console.log(res.data);
                 if(res.data.status==10010){
                       this.$store.state.flag=0;
+                }
+            })
+        }
+        goLogin(id){
+             event.stopPropagation();
+             let token = localStorage.token;
+            axios.post('http://101.37.76.177:8000/checkUser',  {token:token})
+            .then(res=>{
+                console.log(res.data);
+                if(res.data.status==10010){
+                    this.$store.state.flag=0;
                     this.$router.push("login");
                 }else if(res.data.status==10000){
                     this.show=!this.show;
@@ -77,7 +91,6 @@ export default {
                     // .then(res=>{console.log(res)}  
         },
          goSpeechDetails(id){
-             console.log(id)
             this.$store.state.footerShow=false;
             this.$router.push('speechDetails/'+id)
         },
@@ -88,8 +101,8 @@ export default {
             //     console.log(res);
             //     this.$store.state.status=false;
             // })
-         
-    }
+    } 
+    
 }
 </script>
 <style scoped>

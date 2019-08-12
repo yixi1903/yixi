@@ -11,7 +11,11 @@
 
 <script>
 
+<<<<<<< HEAD
 import Content from '../components/Content'
+=======
+import Content from './Content'
+>>>>>>> 8f45796fe5771cca87eede73c36904ca4410e5fa
 export default {
     components:{Content},
     mounted(){

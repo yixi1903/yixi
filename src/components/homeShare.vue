@@ -44,6 +44,7 @@ export default {
         .then(res=>{
             this.qrCode=res.data.data
             console.log(res.data.data)
+
         })
     }
 }

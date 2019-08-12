@@ -32,7 +32,7 @@
 </template>
 <script>
 import axios from 'axios'
-// import { clearInterval } from 'timers';
+
 export default {
     data() {
         return {
@@ -41,6 +41,7 @@ export default {
             countDown:"获取验证码"
         }
     },
+
     methods:{
         returnHome(){
             if(this.$store.state.flag==1){
@@ -79,6 +80,14 @@ export default {
                         clearInterval(timer)
                     }
                 },1000)
+            axios.post('http://101.37.76.177:8000/login',{phone:this.phone})
+            .then(res=>{
+                localStorage.token = res.data.token;
+                localStorage.phone = res.data.phone;
+                this.$router.push("Home");
+                console.log(res.data)
+                // console.log(localStorage.token);
+            })
             }
         }
     },
@@ -103,6 +112,7 @@ export default {
     .login-input>div>input{border: none;height:.93rem;width:60%;outline-width: 0.5px;background: rgba(250,251,252,.8);}
     .login-input>div>span{color:#bdbdbd;font-size: 10px;}
     .active{color:#333 !important;}
+
     .redActive{color:#ce0900 !important;}
 
     .line{padding:0 .5rem;margin-top:.8rem;display: flex;justify-content: space-around;align-items: center}
